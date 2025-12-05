@@ -100,7 +100,7 @@ export default function DetailedCaseStudy({ game }: DetailedCaseStudyProps) {
               
               {isArray ? (
                 <ul className="space-y-3 text-gray-800">
-                  {section.content.map((item, idx) => (
+                  {(section.content as string[]).map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-base md:text-lg leading-relaxed">
                       <span className="text-primary-600 mt-2 font-bold text-xl flex-shrink-0">•</span>
                       <span className="flex-1">{item}</span>
@@ -108,7 +108,7 @@ export default function DetailedCaseStudy({ game }: DetailedCaseStudyProps) {
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-800 text-base md:text-lg leading-relaxed font-normal">{section.content}</p>
+                <p className="text-gray-800 text-base md:text-lg leading-relaxed font-normal">{section.content as string}</p>
               )}
             </div>
           )
