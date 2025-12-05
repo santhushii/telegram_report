@@ -239,11 +239,11 @@ Report Generated: ${new Date().toLocaleDateString()}
       
       // Set font and add title
       doc.setFontSize(18)
-      doc.setFont(undefined, 'bold')
+      doc.setFont("helvetica", "bold")
       doc.text('Strategic Diagnosis of Telegram-Based Social Games', 105, 20, { align: 'center', maxWidth: 180 })
       
       doc.setFontSize(12)
-      doc.setFont(undefined, 'normal')
+      doc.setFont("helvetica", "normal")
       doc.text('Flaws and Structural Limitations in the Telegram Gaming Ecosystem', 105, 30, { align: 'center', maxWidth: 180 })
       
       // Add date
