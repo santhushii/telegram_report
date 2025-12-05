@@ -6,25 +6,14 @@ interface ReportPageProps {
   id: string
   pageNumber: number
   children: React.ReactNode
-  backgroundImage?: string
 }
 
-export default function ReportPage({ id, pageNumber, children, backgroundImage }: ReportPageProps) {
+export default function ReportPage({ id, pageNumber, children }: ReportPageProps) {
   return (
     <div
       id={id}
-      className="min-h-screen relative overflow-hidden"
-      style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="min-h-screen relative overflow-hidden bg-gray-900"
     >
-      {/* Overlay for readability */}
-      {backgroundImage && (
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
-      )}
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col">

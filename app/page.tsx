@@ -7,6 +7,7 @@ import ExpandableSection from '@/components/ExpandableSection'
 import Chart from '@/components/Chart'
 import GameCaseStudy from '@/components/GameCaseStudy'
 import DetailedCaseStudy from '@/components/DetailedCaseStudy'
+import DownloadButton from '@/components/DownloadButton'
 import { 
   AlertTriangle, 
   TrendingDown, 
@@ -67,22 +68,33 @@ export default function Home() {
         <Hero />
 
         <main className="max-w-6xl mx-auto px-8 py-12">
+          {/* Download Section */}
+          <section id="download-section" className="mb-12">
+            <div className="section-card relative bg-gradient-to-br from-primary-50 via-accent-50 to-purple-50 border-2 border-primary-300">
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-extrabold gradient-text mb-4">Download Summary Document</h3>
+                <p className="text-gray-900 mb-6 text-lg">Get a comprehensive PDF or text summary of this strategic diagnosis report</p>
+                <DownloadButton />
+              </div>
+            </div>
+          </section>
+
           {/* Overview Section */}
           <section id="overview" className="mb-16">
-            <div className="section-card">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-12 bg-gradient-to-b from-primary-500 to-accent-500 rounded-full"></div>
-                <h2 className="text-4xl font-extrabold gradient-text">Overview</h2>
+            <div className="section-card relative">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-2 h-16 bg-gradient-to-b from-primary-500 via-accent-500 to-purple-500 rounded-full shadow-lg shadow-primary-500/30"></div>
+                <h2 className="text-4xl md:text-5xl font-extrabold gradient-text drop-shadow-sm">Overview</h2>
               </div>
-              <div className="space-y-4">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Telegram's recent wave of social crypto games – exemplified by <span className="font-semibold text-primary-600">Hamster Kombat</span>, 
-                  {' '}<span className="font-semibold text-primary-600">Notcoin</span>, <span className="font-semibold text-primary-600">MemeFi</span>, 
-                  {' '}and <span className="font-semibold text-primary-600">Catizen</span> – has drawn tens of millions of users with simple "tap-to-earn" 
+              <div className="space-y-6">
+                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-normal">
+                  Telegram's recent wave of social crypto games – exemplified by <span className="font-bold text-primary-700 bg-primary-50 px-2 py-1 rounded">Hamster Kombat</span>, 
+                  {' '}<span className="font-bold text-primary-700 bg-primary-50 px-2 py-1 rounded">Notcoin</span>, <span className="font-bold text-primary-700 bg-primary-50 px-2 py-1 rounded">MemeFi</span>, 
+                  {' '}and <span className="font-bold text-primary-700 bg-primary-50 px-2 py-1 rounded">Catizen</span> – has drawn tens of millions of users with simple "tap-to-earn" 
                   mechanics and token airdrop promises. However, despite explosive growth in 2024, cracks 
                   in this Telegram gaming ecosystem have become apparent.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-normal">
                   This report analyzes the key flaws and gaps undermining these games' long-term success, 
                   spanning gameplay design, monetization, retention, technical infrastructure, community 
                   dynamics, and missed opportunities. Each issue is supported by data and case studies, 
@@ -96,14 +108,14 @@ export default function Home() {
           <section id="gameplay" className="mb-16">
             <ExpandableSection title="1. Gameplay Design Limitations and User Engagement Fatigue" defaultOpen={true}>
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-6 rounded-xl shadow-md">
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-7 rounded-xl shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-yellow-100 flex items-center justify-center">
-                      <AlertTriangle className="w-6 h-6 text-yellow-600" />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-yellow-200 flex items-center justify-center shadow-sm">
+                      <AlertTriangle className="w-7 h-7 text-yellow-700" />
                     </div>
                     <div>
-                      <p className="font-bold text-yellow-900 text-lg mb-2">Key Issue</p>
-                      <p className="text-yellow-800 leading-relaxed">
+                      <p className="font-extrabold text-yellow-900 text-xl mb-3">Key Issue</p>
+                      <p className="text-yellow-900 leading-relaxed text-base md:text-lg font-medium">
                         Telegram mini-games to date have largely been simple, grind-heavy experiences, 
                         which quickly leads to player fatigue.
                       </p>
@@ -112,53 +124,55 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5 flex items-center gap-2">
                     <Gamepad2 className="w-5 h-5 text-primary-600" />
                     Repetitive "Tap-to-Earn" Loops
                   </h3>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-800 text-base md:text-lg mb-5 leading-relaxed font-normal">
                     Most popular titles rely on extremely basic mechanics (e.g. incessant tapping or clicking) 
-                    with minimal skill or variety. For example, Hamster Kombat's gameplay involved mindless 
-                    screen tapping to earn tokens – a novelty at first, but one that many found "shallow and 
-                    repetitive," causing enthusiasm to fade rapidly. This lack of depth means players exhaust 
+                    with minimal skill or variety. For example, <strong className="font-bold text-gray-900">Hamster Kombat's</strong> gameplay involved mindless 
+                    screen tapping to earn tokens – a novelty at first, but one that many found <em className="italic">"shallow and 
+                    repetitive,"</em> causing enthusiasm to fade rapidly. This lack of depth means players exhaust 
                     the fun within days, treating it like a chore rather than entertainment.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Minimal Content & Progression</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Minimal Content & Progression</h3>
+                  <p className="text-gray-900 text-base md:text-lg mb-6 leading-relaxed font-medium">
                     These games often lack varied content, narrative, or meaningful progression beyond 
                     incremental number increases. Once the initial curiosity wears off, there are few new 
                     challenges or modes to keep players engaged.
                   </p>
-                  <Chart 
-                    data={sessionLengthData} 
-                    dataKey="minutes" 
-                    type="bar"
-                    title="Average Session Length (Minutes)"
-                    color="#0ea5e9"
-                  />
+                  <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200 mb-6">
+                    <Chart 
+                      data={sessionLengthData} 
+                      dataKey="minutes" 
+                      type="bar"
+                      title="Average Session Length (Minutes)"
+                      color="#0ea5e9"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">One-Dimensional Engagement</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">One-Dimensional Engagement</h3>
+                  <p className="text-gray-900 text-base md:text-lg leading-relaxed font-medium">
                     Early Telegram games provided little social or strategic gameplay to enrich the experience. 
-                    Notcoin's founders acknowledged that the first wave of Telegram games "didn't provide that 
-                    social element" or a "fun time with friends," since players were focused purely on farming 
+                    <strong className="font-bold">Notcoin's founders</strong> acknowledged that the first wave of Telegram games <em className="italic">"didn't provide that 
+                    social element"</em> or a <em className="italic">"fun time with friends,"</em> since players were focused purely on farming 
                     rewards. With no multiplayer cooperation or competitive depth (beyond rudimentary leaderboards), 
                     the gameplay experience fails to sustain interest over time.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Over-reliance on Novelty</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Over-reliance on Novelty</h3>
+                  <p className="text-gray-900 text-base md:text-lg leading-relaxed font-medium">
                     Many designs bank on meme themes or gimmicks (cute hamsters, meme coin mascots, etc.) to 
-                    attract users, but this alone can't carry long-term engagement. Hamster Kombat initially 
+                    attract users, but this alone can't carry long-term engagement. <strong className="font-bold">Hamster Kombat</strong> initially 
                     eclipsed even Bitcoin mining in popularity by making earning as easy as tapping, yet its 
-                    "easy gameplay became its downfall" as players quickly grew bored once the novelty wore off.
+                    <em className="italic">"easy gameplay became its downfall"</em> as players quickly grew bored once the novelty wore off.
                   </p>
                 </div>
               </div>
@@ -169,14 +183,15 @@ export default function Home() {
           <section id="monetization" className="mb-16">
             <ExpandableSection title="2. Monetization Pitfalls and Sustainability Issues" defaultOpen={true}>
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 p-6 rounded-xl shadow-md">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-                      <DollarSign className="w-6 h-6 text-red-600" />
+                <div className="bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 border-l-4 border-red-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-200/20 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+                  <div className="flex items-start gap-5 relative z-10">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-red-400 to-pink-400 flex items-center justify-center shadow-lg shadow-red-500/30">
+                      <DollarSign className="w-8 h-8 text-red-900" />
                     </div>
                     <div>
-                      <p className="font-bold text-red-900 text-lg mb-2">Critical Flaw</p>
-                      <p className="text-red-800 leading-relaxed">
+                      <p className="font-extrabold text-red-900 text-xl md:text-2xl mb-3">Critical Flaw</p>
+                      <p className="text-red-900 leading-relaxed text-base md:text-lg font-semibold">
                         Monetization in these Telegram games is fundamentally flawed, raising concerns about 
                         economic sustainability.
                       </p>
@@ -185,8 +200,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Dependence on Token Airdrops</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Dependence on Token Airdrops</h3>
+                  <p className="text-gray-900 mb-6">
                     Rather than proven revenue models, these games lean on giveaway token airdrops to attract 
                     and reward players. According to Helika's analysis, airdrops have been the main driver of 
                     user growth – for instance, "Catizen's 150 million token airdrop was the reason behind 
@@ -196,8 +211,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Unsustainable "Play-to-Earn" Economies</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Unsustainable "Play-to-Earn" Economies</h3>
+                  <p className="text-gray-900 mb-6">
                     The in-game economies often distribute tokens liberally for simple actions, flooding the market. 
                     When millions of users all expect to "earn" value from a game without putting value in, the 
                     token's price invariably collapses under sell pressure.
@@ -212,8 +227,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">No Effective In-App Purchases</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">No Effective In-App Purchases</h3>
+                  <p className="text-gray-900">
                     Most Telegram games so far do not offer robust in-app purchase options or sinks for player 
                     spending. Notcoin, for instance, included "paid" boosts to speed up progress, "but you can 
                     only shell out earned Notcoin, and there's no way to buy [currency] within the game." 
@@ -223,8 +238,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Pump-and-Dump Dynamics</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Pump-and-Dump Dynamics</h3>
+                  <p className="text-gray-900">
                     Tying monetization to token launches encourages pump-and-dump behavior that undermines 
                     long-term viability. Users join to get free tokens, and many cash out as soon as those 
                     tokens become tradeable, causing a price crash that hurts latecomers and the game's economy. 
@@ -241,14 +256,15 @@ export default function Home() {
           <section id="retention" className="mb-16">
             <ExpandableSection title="3. User Retention and Lifecycle Problems" defaultOpen={true}>
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-orange-50 to-amber-50 border-l-4 border-orange-500 p-6 rounded-xl shadow-md">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <TrendingDown className="w-6 h-6 text-orange-600" />
+                <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 border-l-4 border-orange-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200/20 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+                  <div className="flex items-start gap-5 relative z-10">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-orange-400 to-amber-400 flex items-center justify-center shadow-lg shadow-orange-500/30">
+                      <TrendingDown className="w-8 h-8 text-orange-900" />
                     </div>
                     <div>
-                      <p className="font-bold text-orange-900 text-lg mb-2">Retention Crisis</p>
-                      <p className="text-orange-800 leading-relaxed">
+                      <p className="font-extrabold text-orange-900 text-xl md:text-2xl mb-3">Retention Crisis</p>
+                      <p className="text-orange-900 leading-relaxed text-base md:text-lg font-semibold">
                         These Telegram games suffer from severe retention issues, with users often cycling 
                         in and out in hype-driven waves.
                       </p>
@@ -257,45 +273,49 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Abysmal Retention Rates</h3>
-                  <p className="text-gray-700 mb-4">
-                    Player stickiness is far below industry standards. A Helika report found that by late 2024, 
-                    Telegram game retention rates hovered at just 5–20%, whereas traditional mobile games often 
-                    achieve ~20–30% retention. This means the vast majority of users churn shortly after joining.
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Abysmal Retention Rates</h3>
+                  <p className="text-gray-900 text-base md:text-lg mb-6 leading-relaxed font-medium">
+                    Player stickiness is far below industry standards. A <strong className="font-bold">Helika report</strong> found that by late 2024, 
+                    Telegram game retention rates hovered at just <strong className="font-bold">5–20%</strong>, whereas traditional mobile games often 
+                    achieve <strong className="font-bold">~20–30%</strong> retention. This means the vast majority of users churn shortly after joining.
                   </p>
-                  <Chart 
-                    data={userRetentionData} 
-                    dataKey={['Telegram Games', 'Industry Standard']} 
-                    type="area"
-                    title="User Retention Comparison (%)"
-                    color={['#f97316', '#10b981']}
-                  />
+                  <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200 mb-6">
+                    <Chart 
+                      data={userRetentionData} 
+                      dataKey={['Telegram Games', 'Industry Standard']} 
+                      type="area"
+                      title="User Retention Comparison (%)"
+                      color={['#f97316', '#10b981']}
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Hype-Driven Boom and Bust</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Hype-Driven Boom and Bust</h3>
+                  <p className="text-gray-900 text-base md:text-lg mb-6 leading-relaxed font-medium">
                     The user base trajectory for these games typically shows a massive spike followed by a 
-                    dramatic fall-off. Hamster Kombat is the starkest example: it "boasted a massive 300-million-strong 
-                    user base back in August [2024]," then shed roughly 259 million players within three months, 
-                    dropping to just ~41 million active users. This 86% collapse in active user count shows how 
+                    dramatic fall-off. <strong className="font-bold">Hamster Kombat</strong> is the starkest example: it <em className="italic">"boasted a massive 300-million-strong 
+                    user base back in August [2024],"</em> then shed roughly <strong className="font-bold">259 million</strong> players within three months, 
+                    dropping to just <strong className="font-bold">~41 million</strong> active users. This <strong className="font-bold">86% collapse</strong> in active user count shows how 
                     quickly hype can evaporate.
                   </p>
-                  <Chart 
-                    data={userGrowthData} 
-                    dataKey="users" 
-                    type="line"
-                    title="User Growth and Decline (Millions) - Hamster Kombat"
-                    color="#3b82f6"
-                  />
+                  <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200 mb-6">
+                    <Chart 
+                      data={userGrowthData} 
+                      dataKey="users" 
+                      type="line"
+                      title="User Growth and Decline (Millions) - Hamster Kombat"
+                      color="#3b82f6"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">"Farm-and-Flee" Behavior</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">"Farm-and-Flee" Behavior</h3>
+                  <p className="text-gray-900 text-base md:text-lg leading-relaxed font-medium">
                     A significant portion of users treat these games as one-time opportunities rather than 
-                    communities to invest in. Notcoin's team observed that gamers would "soon [go] game-hopping, 
-                    moving to other games as soon as they 'farmed' what they could in one project." This indicates 
+                    communities to invest in. <strong className="font-bold">Notcoin's team</strong> observed that gamers would <em className="italic">"soon [go] game-hopping, 
+                    moving to other games as soon as they 'farmed' what they could in one project."</em> This indicates 
                     zero brand loyalty or long-term attachment.
                   </p>
                 </div>
@@ -308,11 +328,11 @@ export default function Home() {
             <ExpandableSection title="4. Technical and Infrastructure Constraints" defaultOpen={false}>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5 flex items-center gap-2">
                     <Server className="w-5 h-5 text-primary-600" />
                     Scalability vs. Depth Tradeoff
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Telegram games benefit from easy distribution but to accommodate scale, developers kept the 
                     games extremely lightweight. This has limited the complexity and richness of gameplay. 
                     Real-time action, 3D graphics, or large persistent worlds are off the table given the constraints 
@@ -321,8 +341,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Botting and Cheating Epidemic</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Botting and Cheating Epidemic</h3>
+                  <p className="text-gray-900 mb-6">
                     The ease of creating Telegram accounts and the financial incentives at play have led to rampant 
                     bot farming and cheating across these games. Hamster Kombat rolled out an anti-cheat system 
                     post-launch and ended up banning ~2.3 million accounts and confiscating 6 billion tokens for 
@@ -337,8 +357,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Security and Fraud Risks</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Security and Fraud Risks</h3>
+                  <p className="text-gray-900 mb-6">
                     Tightly related to cheating, the infrastructure has to handle wallet integrations and token transfers 
                     for millions of casual users – many of whom are new to crypto. This poses security challenges. There 
                     have been anecdotes of phishing or scam bots in the community (given the open Telegram environment) 
@@ -350,8 +370,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Platform Limitations (UI/UX)</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Platform Limitations (UI/UX)</h3>
+                  <p className="text-gray-900 mb-6">
                     Telegram's interface for games (either chat commands or simple web views within the app) limits the user 
                     experience. The games can't leverage full-screen immersive graphics or complex controls; they must remain 
                     accessible in a mobile chat context. As a result, many rely on static images, basic animations, and text 
@@ -365,8 +385,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Lack of Persistent World/State</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Lack of Persistent World/State</h3>
+                  <p className="text-gray-900">
                     Most current Telegram games do not offer a shared persistent world or environment where players can see ongoing 
                     changes. The state is usually limited to the player's own progress (levels, points, tokens) and perhaps a 
                     leaderboard. There's no evolving world map, no player-built content, and limited sense of place or continuity. 
@@ -402,8 +422,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Isolated Game Ecosystems</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Isolated Game Ecosystems</h3>
+                  <p className="text-gray-900 mb-6">
                     Each popular Telegram game to date has its own standalone bot, wallet integration, token, and community 
                     channels. There is little to no interoperability between them. A player's achievements or assets in one 
                     game (say, MemeFi) have no bearing if they try another game (say, Notcoin) – they start from scratch. 
@@ -416,8 +436,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Community Splintering</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Community Splintering</h3>
+                  <p className="text-gray-900 mb-6">
                     Because games rise and fall so fast, the player community is constantly splintering. Users might join a 
                     Hamster Kombat group, then abandon it for a MemeFi group, then move on again – resulting in Discord/Telegram 
                     groups that flare to hundreds of thousands of members during an airdrop campaign and then go mostly silent 
@@ -430,8 +450,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Lack of Cross-Game Currency or Items</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Lack of Cross-Game Currency or Items</h3>
+                  <p className="text-gray-900 mb-6">
                     Interoperability in terms of economy is also absent. For example, a Notcoin earned in the Notcoin game 
                     cannot be used to buy something in Catizen; Hamster Kombat's in-game items (if any) aren't NFTs you could 
                     trade or utilize in another game. This is a missed Web3 opportunity – ideally, one might have expected a 
@@ -444,8 +464,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Transient Userbases</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Transient Userbases</h3>
+                  <p className="text-gray-900 mb-6">
                     The "game-hopping" behavior mentioned earlier exemplifies how little friction there is for players to abandon 
                     one game for another. While competition can be healthy, the fact that users feel no loyalty suggests each game 
                     fails to establish a unique community culture or long-term goal. Everyone is chasing the next reward. This also 
@@ -458,8 +478,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">No Meta-Game or Interoperable Progression</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">No Meta-Game or Interoperable Progression</h3>
+                  <p className="text-gray-900">
                     In successful gaming ecosystems (like traditional consoles or platforms like Roblox), there's often a meta-layer 
                     that ties experiences together – achievements, gamer score, cross-title friends lists, etc. Telegram games currently 
                     offer nothing of that sort. For instance, a player who mastered Notcoin doesn't carry any status or benefits when 
@@ -493,8 +513,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Limited Social Interaction</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Limited Social Interaction</h3>
+                  <p className="text-gray-900 mb-6">
                     Aside from referral competitions and leaderboards, most games offer scant ways for players to 
                     genuinely interact. Real multiplayer gameplay – such as cooperative missions, PvP battles, or 
                     group challenges – is almost nonexistent. MemeFi introduced "factions" or clans (meme-themed 
@@ -510,8 +530,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">No Personalization or Adaptive Gameplay</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">No Personalization or Adaptive Gameplay</h3>
+                  <p className="text-gray-900 mb-6">
                     AI-driven personalization is a major trend in gaming (and apps generally), used to tailor difficulty, 
                     content, or recommendations to each user. Telegram games have not employed this in the player experience. 
                     Every user faces the same static tasks (tap X times, come back tomorrow for Y). There's an opportunity 
@@ -525,8 +545,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Underutilization of AI for Community & Content</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Underutilization of AI for Community & Content</h3>
+                  <p className="text-gray-900 mb-6">
                     The only notable use of AI we've seen was Hamster Kombat using AI to generate art cheaply – which backfired 
                     in terms of perceived quality. However, AI could have been used in positive ways: for instance, AI moderators 
                     to manage the large communities (filtering spam/bots more effectively), or AI-driven community events (quiz 
@@ -538,8 +558,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">No "Real" Games Yet (Per Developers Themselves)</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">No "Real" Games Yet (Per Developers Themselves)</h3>
+                  <p className="text-gray-900 mb-6">
                     Tellingly, even insiders acknowledge the lack of substantial gameplay. One Notcoin co-founder remarked that 
                     "Telegram has no 'real games' yet," with optimism that they will come in the future. By "real," he likely 
                     means games that stand on their own as fun, not just token faucets. The current products are more like 
@@ -553,8 +573,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Potential of Telegram Features Untapped</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Potential of Telegram Features Untapped</h3>
+                  <p className="text-gray-900">
                     Telegram offers rich features (groups, channels, bots, payments, even VoIP for voice chats) that could enable 
                     innovative social gameplay. Imagine a game where group chat members collectively make decisions in a story, or 
                     a trivia battle happening live in a Telegram group. Or using Telegram's poll and quiz features for in-game events. 
@@ -571,7 +591,7 @@ export default function Home() {
           <section id="case-studies" className="mb-16">
             <div className="section-card mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">7. Case Studies: Specific Game Analyses</h2>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-gray-900">
                 Below we diagnose each of the highlighted games – Hamster Kombat, Notcoin, MemeFi, and Catizen – 
                 to illustrate how the above issues manifest in practice.
               </p>
@@ -818,7 +838,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-gray-900">Conclusion</h2>
               </div>
 
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-900 mb-8 leading-relaxed">
                 The current generation of Telegram-based social games has proven the ability to onboard massive user 
                 numbers quickly, but it has simultaneously exposed critical flaws that undermine long-term success.
               </p>
@@ -829,7 +849,7 @@ export default function Home() {
                     <XCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-red-900 mb-2">Key Failures</h3>
-                      <ul className="space-y-2 text-sm text-gray-700">
+                      <ul className="space-y-2 text-sm text-gray-900">
                         <li>• Shallow gameplay leads to fast fatigue</li>
                         <li>• Overreliance on unsustainable airdrops</li>
                         <li>• Poor retention (5–20% vs. 20–30% industry standard)</li>
@@ -847,7 +867,7 @@ export default function Home() {
                     <AlertCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-green-900 mb-2">Path Forward</h3>
-                      <ul className="space-y-2 text-sm text-gray-700">
+                      <ul className="space-y-2 text-sm text-gray-900">
                         <li>• Design deeper, genuinely fun gameplay</li>
                         <li>• Implement fair and sustainable monetization</li>
                         <li>• Prioritize retention metrics over vanity user counts</li>
